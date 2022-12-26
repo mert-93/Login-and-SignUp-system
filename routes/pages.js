@@ -18,4 +18,5 @@ router.get('/forgotpassword', (req,res) =>{
     res.render('forgotpassword');
 })
 
+
 module.exports = router;
