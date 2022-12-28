@@ -19,9 +19,8 @@ app.use(express.json());
 app.set('view engine', 'hbs');
 
 
-
 app.use('/',require('./routes/pages'));
-//app.use('/auth',require('./routes/auth'));
+app.use('/auth',require('./routes/auth'));
 app.use('/mail',require('./routes/mail'));
 
 
