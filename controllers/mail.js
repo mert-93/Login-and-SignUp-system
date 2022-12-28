@@ -2,22 +2,21 @@ const con = require('../database/connection');
 const nodemailer = require("nodemailer");
 const path = require("path");
 
-
 exports.sendMail = (req,res)=>{
     console.log(req.body);
 
     const { email} = req.body.email;
 
     let mailTransporter = nodemailer.createTransport({
-        service:"gmail",
+        service:"hotmail",
         auth:{
-            user:"uavnot2001@gmail.com",
-            pass:"skydreamercoderhope1453"
+            user:"yeni_deneme_eposta@outlook.com",
+            pass:"cbumaildeneme2022"
         }
     })
     
     let details = {
-        from: "uavnot2001@gmail.com",
+        from: "yeni_deneme_eposta@outlook.com",
         to: email,
         subject: "testing mail",
         text: "test mail sended"
@@ -32,9 +31,3 @@ exports.sendMail = (req,res)=>{
         }
     })
 }
-
-
-
-
-
-
