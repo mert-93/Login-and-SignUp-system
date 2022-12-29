@@ -7,6 +7,7 @@ const authValidator = async function(req,res,next){
             name : joi.string().max(256).required(),
             email : joi.string().max(256).required(),
             password : joi.string().max(256).required(),
+            passwordConfirm : joi.string().max(256).required(),
         })
         .validateAsync(req.body);
         next();

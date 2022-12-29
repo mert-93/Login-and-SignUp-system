@@ -42,12 +42,12 @@ exports.login = (req,res) => {
 
     const { email, password } = req.body;
 
-    con.query('SELECT email FROM users WHERE email = ?', [email], async (error, results) => {
+    con.query('SELECT * FROM users WHERE email = ?', [email], async (error, results) => {
         if(error){
             console.log(error);
         }
-
-        if(results.length > 0 /*&& await bcrypt.compare(password, results[0].password)*/ ){
+        console.log(results);
+        if(results.length > 0 && await bcrypt.compare(password, results[0].password)){
             return res.render('index', {message: 'Logged in succesfully as a ' + email})
         }else{
             return res.render('login', {message: 'Email or Password is incorrect'})
