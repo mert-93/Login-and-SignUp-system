@@ -4,6 +4,4 @@ const router = express.Router();
 
 router.post('/forgotpassword',mailController.sendMail )
 
-
-
 module.exports = router;

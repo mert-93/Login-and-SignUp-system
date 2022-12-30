@@ -4,19 +4,19 @@ const path = require("path");
 
 exports.sendMail = (req,res)=>{
     console.log(req.body);
-
     const { email} = req.body.email;
 
     let mailTransporter = nodemailer.createTransport({
-        service:"hotmail",
-        auth:{
-            user:"yeni_deneme_eposta@outlook.com",
-            pass:"cbumaildeneme2022"
+        host: 'smtp.mailtrap.io',
+        port: 2525,
+        auth: {
+            user: 'neknefosta@gufum.com', // your Mailtrap username
+            pass: 'abcdefgh123' //your Mailtrap password
         }
     })
     
     let details = {
-        from: "yeni_deneme_eposta@outlook.com",
+        from: "neknefosta@gufum.com",
         to: email,
         subject: "testing mail",
         text: "test mail sended"

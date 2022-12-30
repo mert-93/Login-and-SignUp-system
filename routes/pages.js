@@ -15,8 +15,11 @@ router.get('/login', (req,res) =>{
 })
 
 router.get('/forgotpassword', (req,res) =>{
-    res.render('forgotpassword');
+    res.render('forgotPassword');
 })
 
+router.get('/adminPanel', (req,res) =>{
+    res.render('adminPanel');
+})
 
 module.exports = router;
