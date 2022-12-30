@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended: false}))
 
 app.use(express.json());
 
-app.set('view engine', 'hbs');
+app.set('view engine', 'ejs');
 
 
 app.use('/',require('./routes/pages'));
