@@ -14,12 +14,19 @@ router.get('/login', (req,res) =>{
     res.render('login');
 })
 
-router.get('/forgotpassword', (req,res) =>{
+router.get('/forgot-password', (req,res) =>{
     res.render('forgotPassword');
 })
 
-router.get('/adminPanel', (req,res) =>{
+router.get('/admin-panel', (req,res) =>{
     res.render('adminPanel');
 })
 
+<<<<<<< Updated upstream
+=======
+router.get('/user-panel', (req,res) =>{
+    res.render('userPanel');
+})
+
+>>>>>>> Stashed changes
 module.exports = router;
