@@ -12,13 +12,9 @@ exports.register = (req,res) => {
         }
 
         if(results.length > 0){
-            return res.render('register', {
-                message: 'That email is already in use'
-            })
+            return res.render('index')
         }else if( password !== passwordConfirm){
-            return res.render('register', {
-                message: 'Password do not match'
-            })
+            return res.render('index')
         }
         
         let hashedPassword = await bcrypt.hash(password, 8);
@@ -29,9 +25,7 @@ exports.register = (req,res) => {
                 console.log(error);
             }else{
                 console.log(results);
-                return res.render('register', {
-                    message: 'User registered'
-                })
+                return res.render('userPanel')
             }
         })
     });
@@ -48,9 +42,9 @@ exports.login = (req,res) => {
         }
         console.log(results);
         if(results.length > 0 && await bcrypt.compare(password, results[0].password)){
-            return res.render('index', {message: 'Logged in succesfully as a ' + email})
+            return res.render('userPanel')
         }else{
-            return res.render('login', {message: 'Email or Password is incorrect'})
+            return res.render('index')
         }
     });
 }
