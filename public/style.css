@@ -25,6 +25,81 @@ nav li a{
 }
 
 nav li a:hover{
-    color: greenyellow;
+    color: rgb(255, 0, 0);
     text-decoration: none;
 }
+
+label{
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+
+.container .card{
+    width: 50%;
+    height: 100%;
+    background-color: #563d7c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.container .card .card-header{
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    background-color: black;
+    font-weight: bolder;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+}
+.container .card .card-body .form-group{
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.container .card .card-body .btn{
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+    margin-left: 5px;
+}
+
+.container .card .card-body .form-user{
+    width: 40%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.container .card .card-body .forgot{
+    margin-left: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container .card .card-body .forgot:hover{
+    color: rgb(255, 0, 0);
+}
+
+
