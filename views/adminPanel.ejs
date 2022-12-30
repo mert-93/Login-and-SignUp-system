@@ -3,42 +3,44 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <form action="/auth/register" method="POST">
-                    <div class="col">
-                        <div class="row">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" name="name">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Adress</label>
-                                <input type="email" class="form-control" id="email" name="email">
-                            </div>
-                        </div>
-                        <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <form action="/auth/register" method="POST">
+                            <div class="row">
                                 <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="password" name="password">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="name" name="name">
                                 </div>
                                 <div class="form-group">
-                                    <label for="passwordConfirm">Confirm Password</label>
-                                    <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm">
+                                    <label for="email">Email Adress</label>
+                                    <input type="email" class="form-control" id="email" name="email">
                                 </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-user">
-                                <label for="exampleFormControlSelect1">Example select</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>User</option>
-                                    <option>Admin</option>
-                                </select>
                             </div>
-                            
-                        </div>
-                        <div class="row">
-                            <button type="submit" class="btn btn-lg btn-success mt-4">Register</button>
-                        </div>
-                    </form>
+                            <div class="row">
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" id="password" name="password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passwordConfirm">Confirm Password</label>
+                                        <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm">
+                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Example select</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>User</option>
+                                        <option>Admin</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                <button type="submit" class="btn btn-lg btn-success mt-4">Register</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

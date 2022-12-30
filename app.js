@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const mysql = require('mysql');
 const dotenv = require('dotenv');
 
 dotenv.config({path:'./.env'});
@@ -24,6 +23,6 @@ app.use('/auth',require('./routes/auth'));
 app.use('/mail',require('./routes/mail'));
 
 
-app.listen(5000,() =>{
-    console.log("Server is running on port 5000")
+app.listen(process.env.PORT,() =>{
+    console.log("Server is running on port: " + process.env.PORT)
 });
