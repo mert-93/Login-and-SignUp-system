@@ -22,11 +22,12 @@ router.get('/admin-panel', (req,res) =>{
     res.render('adminPanel');
 })
 
-<<<<<<< Updated upstream
-=======
 router.get('/user-panel', (req,res) =>{
     res.render('userPanel');
 })
 
->>>>>>> Stashed changes
+router.get('/userPanel', (req,res) =>{
+    res.render('userPanel');
+})
+
 module.exports = router;
