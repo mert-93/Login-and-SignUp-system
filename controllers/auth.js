@@ -1,5 +1,6 @@
 const con = require('../database/connection');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 exports.register = (req,res) => {
     console.log(req.body);
@@ -48,7 +49,13 @@ exports.login = (req,res) => {
         }
         console.log(results);
         if(results.length > 0 && await bcrypt.compare(password, results[0].password)){
-            return res.render('index', {message: 'Logged in succesfully as a ' + email})
+            const payload = {
+                UserID: results[0].Id,
+              };
+              const token = jwt.sign(payload, req.app.get('api_key'), {
+                expiresIn: '7d'
+              });
+            return res.render('index', {message: 'Logged in succesfully as a ' + email,token:token})
         }else{
             return res.render('login', {message: 'Email or Password is incorrect'})
         }
