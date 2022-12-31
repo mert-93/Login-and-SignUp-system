@@ -7,7 +7,6 @@ exports.register = (req,res) => {
 
     const { name, email, password, passwordConfirm } = req.body;
 
-
     
     con.query('SELECT email FROM users WHERE email = ?', [email], async (error, results) => {
         if(error){
@@ -23,7 +22,7 @@ exports.register = (req,res) => {
         let hashedPassword = await bcrypt.hash(password, 8);
         console.log(hashedPassword);
         
-        con.query('INSERT INTO users SET ? ', {name: name, email: email, password: hashedPassword}, (error, results) => {
+        con.query('INSERT INTO users SET ? ', {name: name, userType : "user", email: email, password: hashedPassword}, (error, results) => {
             if(error){
                 console.log(error);
             }else{
