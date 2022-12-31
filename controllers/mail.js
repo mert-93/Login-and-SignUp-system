@@ -6,28 +6,34 @@ exports.sendMail = (req,res)=>{
     console.log(req.body);
     const { email} = req.body.email;
 
-    let mailTransporter = nodemailer.createTransport({
-        host: 'smtp.mailtrap.io',
-        port: 2525,
-        auth: {
-            user: 'neknefosta@gufum.com', // your Mailtrap username
-            pass: 'abcdefgh123' //your Mailtrap password
-        }
-    })
-    
-    let details = {
-        from: "neknefosta@gufum.com",
-        to: email,
-        subject: "testing mail",
-        text: "test mail sended"
-    }
-    
-    mailTransporter.sendMail(details,(err)=>{
-        if(err){
-            console.log("it has an error",err);
+    con.query('SELECT password FROM users WHERE email = ?', [email], async (error, results) => {
+        if(error){
+            console.log(error);
         }
         else{
-            console.log(" email sent!!");
+            let mailTransporter = nodemailer.createTransport({
+                service:'gmail',
+                auth: {
+                    user: process.env.GMAIL_USER, // your Mailtrap username
+                    pass: process.env.GMAIL_PASSWORD, //your Mailtrap password
+                }
+            })
+            
+            let details = {
+                from: process.env.GMAIL_USER,
+                to: email,
+                subject: "testing mail",
+                text: results
+            }
+            
+            mailTransporter.sendMail(details,(err)=>{
+                if(err){
+                    console.log("it has an error",err);
+                }
+                else{
+                    console.log(" email sent!!");
+                }
+            })
         }
     })
 }
