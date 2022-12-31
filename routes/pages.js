@@ -26,8 +26,4 @@ router.get('/user-panel', (req,res) =>{
     res.render('userPanel');
 })
 
-router.get('/userPanel', (req,res) =>{
-    res.render('userPanel');
-})
-
 module.exports = router;

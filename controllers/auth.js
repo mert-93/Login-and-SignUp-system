@@ -1,10 +1,13 @@
 const con = require('../database/connection');
 const bcrypt = require('bcryptjs');
+const { name } = require('ejs');
 
 exports.register = (req,res) => {
     console.log(req.body);
 
     const { name, email, password, passwordConfirm } = req.body;
+
+
     
     con.query('SELECT email FROM users WHERE email = ?', [email], async (error, results) => {
         if(error){
@@ -25,7 +28,7 @@ exports.register = (req,res) => {
                 console.log(error);
             }else{
                 console.log(results);
-                return res.render('userPanel')
+                return res.render('userPanel', {data: results})
             }
         })
     });
@@ -42,7 +45,11 @@ exports.login = (req,res) => {
         }
         console.log(results);
         if(results.length > 0 && await bcrypt.compare(password, results[0].password)){
-            return res.render('userPanel')
+            if(results[0].userType === 'admin'){
+                return res.render('adminPanel', {data: results})}
+            else{
+                return res.render('userPanel', {data: results})
+            }
         }else{
             return res.render('index')
         }

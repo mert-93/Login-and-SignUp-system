@@ -1,5 +1,9 @@
 <%- include("partials/_header") %>
 <body>
+    <% data.forEach(entry => { %>
+        <h1><%= entry.name %></h1>
+        <p><%= entry.email %></p>
+    <% }) %>
     <div class="container">
         <div class="card">
             <div class="card-body">
@@ -28,13 +32,9 @@
                             </div>
                             <div class="row">
                                 <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Example select</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>User</option>
-                                        <option>Admin</option>
-                                    </select>
+                                    <label for="userType">User Type</label>
+                                    <input type="userType" class="form-control" id="userType" name="userType">
                                 </div>
-                                
                             </div>
                             <div class="row">
                                 <button type="submit" class="btn btn-lg btn-success mt-4">Register</button>

@@ -1,4 +1,7 @@
 <%- include("partials/_header") %>
 <body>
-    <h1>user olarak giriş yaptınız.</h1>
+    <% data.forEach(entry => { %>
+        <h1><%= entry.name %></h1>
+        <p><%= entry.email %></p>
+    <% }) %>
 </body>

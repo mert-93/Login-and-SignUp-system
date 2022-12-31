@@ -75,13 +75,14 @@ label{
     box-shadow: 0 0 10px rgba(0,0,0,1);
 }
 .container .card .card-body .form-group{
+    min-width: 45%;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     background-color: #563d7c;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,1);
-    margin-left: 5px;
+    margin-left: 10px;
     margin-top: 5px;
 }
 
@@ -93,7 +94,7 @@ label{
     cursor: pointer;
     color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,1);
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 .container .card .card-body .forgot{
